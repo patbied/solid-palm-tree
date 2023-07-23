@@ -8,7 +8,7 @@ const useOrders = (token) => {
     }
   }
     const fetchOrder= async() => {
-        const res = await axios.get('/api/orders/myorders/',config)
+        const res = await axios.get('api/orders/myorders/',config)
         const fetchData = await res.data
         return fetchData
     }

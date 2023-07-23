@@ -3,7 +3,7 @@ import axios from 'axios'
 const useProduct = (id) => {
 
     const fetchProduct = async() => {
-        const res = await axios.get('/api/products/'+id)
+        const res = await axios.get('api/products/'+id)
         const fetchData = await res.data
         return fetchData
     }
