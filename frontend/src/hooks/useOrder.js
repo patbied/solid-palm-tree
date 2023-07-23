@@ -8,7 +8,7 @@ const useOrder = (id,token) => {
     }
   }
     const fetchOrder= async() => {
-        const res = await axios.get('/api/orders/'+id,config)
+        const res = await axios.get('/api/orders/'+id+'/',config)
         const fetchData = await res.data
         return fetchData
     }

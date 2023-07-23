@@ -50,7 +50,7 @@ const UsersRow = ({user,refetchFn}) => {
                         {user.id === userInfo.id ? '' : ( 
                            
                             
-                            <LinkContainer to={`/admin/user/${user.id}`}>
+                            <LinkContainer to={`/adminpage/user/${user.id}`}>
                                 <Button variant='light' className='btn-sm'>
                                     View <i className='fas fa-edit'/>
                                 </Button>

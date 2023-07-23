@@ -45,7 +45,7 @@ const OrderRow = ({order,refetchFn}) => {
   return (
     <tr>
                         
-                        <td>{order?._id}</td>
+                        <td>{order?._id ? order?._id : 'User deleted.'}</td>
                         <td>{order?.user?.id}</td>
                         <td>{dayjs(order?.createdAt).format("DD/MM/YYYY")}</td>
                         <td>{order.isPaid ? 'Yes' : 'No'}</td>
