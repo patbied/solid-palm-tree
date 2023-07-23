@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-!q^gi$3+qg-otp)eu)8nfh(6s1!iyr6c58qlqg#=5$s63dqso(
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1','ecommercedjangoreact-66ae9240ebcc.herokuapp.com','www.ecommercedjangoreact.com','ecommercedjangoreact.com']
-
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 # Application definition
 
@@ -203,6 +203,8 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'ecommerce-proshop-demo-bucket'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'us-east-2'
+
+
 
 if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
