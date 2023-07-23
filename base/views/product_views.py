@@ -13,7 +13,7 @@ def getProducts(req):
     products = Product.objects.all()
     serializer = ProductSerializer(products,many=True)
     # print(serializer.data)
-    return Response({},status=status.HTTP_200_OK)
+    return Response(serializer.data,status=status.HTTP_200_OK)
     
     
     # return Response(serializer.data)
