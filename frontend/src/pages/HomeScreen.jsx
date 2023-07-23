@@ -9,8 +9,12 @@ export const HomeScreen = () => {
   // const dispatch = useDispatch()
 
   const {isLoading, isError, isSuccess, error, data} = useProducts()
-
-  
+  // console.log(data)
+  // useEffect(() => {
+  //   if (isSuccess){
+  //     console.log(data)
+  //   }
+  // },[isSuccess])
 
   // if (isSuccess){
   //   dispatch(product_list_success(data))
@@ -33,7 +37,7 @@ export const HomeScreen = () => {
     <div>
         <h1>Latest Products</h1>
         <Row>
-            {!isError && data  ? (data?.map((product) => (
+            {!isError && data && isSuccess ? (data?.map((product) => (
                 <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                     <Product product={product}/>
                 </Col>

@@ -2,7 +2,7 @@ import {useQuery} from '@tanstack/react-query'
 import axios from 'axios'
 const useProducts = () => {
     const fetchProducts = async() => {
-        const res = await axios.get('/api/products/')
+        const res = await axios.get('api/products/')
         const fetchData = await res.data
         return fetchData
     }
