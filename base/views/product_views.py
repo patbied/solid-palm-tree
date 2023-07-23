@@ -12,7 +12,7 @@ from rest_framework import status
 def getProducts(req):
     products = Product.objects.all()
     serializer = ProductSerializer(products,many=True)
-    print(serializer.data)
+    # print(serializer.data)
     return Response({},status=status.HTTP_200_OK)
     
     
