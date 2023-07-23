@@ -206,3 +206,17 @@ AWS_S3_REGION_NAME = 'us-east-2'
 
 if os.getcwd() == '/app':
     DEBUG = False
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'ERROR',
+    },
+}
