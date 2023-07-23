@@ -132,7 +132,7 @@ const ProductScreen = () => {
                 <ListGroup variant='flush'>
                                         
                 <h4>Reviews</h4>
-{/*                 
+                
                 {!isError && data && isSuccess ? ( 
                     <> 
                     {userInfo ? <AddReviewComponent prodId = {data?._id} refetchFn={refetch} userId={userInfo?.id}/> : ''}
@@ -141,7 +141,7 @@ const ProductScreen = () => {
                         <ReviewComponent key={review?._id} review={review}/>
                     ))}
                      </>
-                ) : ('')} */}
+                ) : ('')}
                
     
                 </ListGroup>

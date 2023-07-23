@@ -18,6 +18,10 @@ const CartScreen = () => {
 
 
  const {cartItems} = cart
+
+ useEffect(() => {
+  console.log(cartItems)
+ },[cartItems])
 //  useEffect(() => {
 //   if (id){
 //     dispatch(addToCart(id,qty))
