@@ -10,7 +10,7 @@ from rest_framework import status
 
 @api_view(['GET'])
 def getProducts(req):
-    return Response("ok!",status=status.HTTP_200_OK)
+    return Response({},status=status.HTTP_200_OK)
     # products = Product.objects.all()
     # serializer = ProductSerializer(products,many=True)
     # return Response(serializer.data)
