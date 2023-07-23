@@ -4,6 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Button } from 'react-bootstrap'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
+import Loader from './Loader'
 const UsersRow = ({user,refetchFn}) => {
 
     const userInfo = useSelector(state => state.user.userInfo)
@@ -16,7 +17,7 @@ const UsersRow = ({user,refetchFn}) => {
       }
 
     const deleteRequest = async() => {
-        const {data} = await axios.delete('/api/users/delete/'+user.id,config)
+        const {data} = await axios.delete('/api/users/delete/'+user.id+'/',config)
         // console.log(data)
         return data
     }
@@ -39,6 +40,7 @@ const UsersRow = ({user,refetchFn}) => {
 
   return (
     <tr>
+     
                         
                         <td>{user?._id}</td>
                         <td>{user.name}</td>
@@ -46,18 +48,25 @@ const UsersRow = ({user,refetchFn}) => {
                         <td>{user.isAdmin ? 'Admin' : 'User'}</td>
                         <td>
                         {user.id === userInfo.id ? '' : ( 
+                           
+                            
                             <LinkContainer to={`/admin/user/${user.id}`}>
                                 <Button variant='light' className='btn-sm'>
                                     View <i className='fas fa-edit'/>
                                 </Button>
                             </LinkContainer>
+                           
                         )}
                         </td>
                         <td>
                         {user.id === userInfo.id ? '' : ( 
+                             <>
+                             {isLoading ? <Loader size="sm"/> : (
                                 <Button variant='danger' className='btn-sm' onClick={deleteHandler}>
                                     Delete <i className='fas fa-trash'/>
                                 </Button>
+                                 )}
+                                 </>
                         )}
                         </td>
                     </tr>

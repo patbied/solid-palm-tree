@@ -12,14 +12,17 @@ import AddReviewComponent from '../components/AddReviewComponent'
 import ReviewComponent from '../components/ReviewComponent'
 
 const ProductScreen = () => {
+    const {id} = useParams()
+    const {isLoading, isError, isSuccess, error, data,refetch} = useProduct(id)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const userInfo = useSelector(state => state.user.userInfo)
     const [qty, setQty] = useState(1)
-    const {id} = useParams()
+   
     const [addedToCart, setAddedToCart] = useState(false)
-    const {isLoading, isError, isSuccess, error, data,refetch} = useProduct(id)
+    
 
+    // console.log(data)
     const addToCartHandler = () => {
         dispatch(addToCart(id,qty))
         setAddedToCart(true)
@@ -129,7 +132,7 @@ const ProductScreen = () => {
                 <ListGroup variant='flush'>
                                         
                 <h4>Reviews</h4>
-                
+{/*                 
                 {!isError && data && isSuccess ? ( 
                     <> 
                     {userInfo ? <AddReviewComponent prodId = {data?._id} refetchFn={refetch} userId={userInfo?.id}/> : ''}
@@ -138,7 +141,7 @@ const ProductScreen = () => {
                         <ReviewComponent key={review?._id} review={review}/>
                     ))}
                      </>
-                ) : ('')}
+                ) : ('')} */}
                
     
                 </ListGroup>

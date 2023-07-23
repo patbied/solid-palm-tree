@@ -8,7 +8,7 @@ const useUser = (id,token) => {
     }
   }
     const fetchUser= async() => {
-        const res = await axios.get('/api/users/'+id,config)
+        const res = await axios.get('/api/users/'+id+"/",config)
         const fetchData = await res.data
         return fetchData
     }

@@ -22,6 +22,7 @@ def getProducts(req):
 
 @api_view(['GET'])
 def getProduct(req, pk):
+    # return Response({},status=status.HTTP_200_OK)
     try:
         product = Product.objects.get(_id=pk)
         serializer = ProductSerializer(product,many=False)

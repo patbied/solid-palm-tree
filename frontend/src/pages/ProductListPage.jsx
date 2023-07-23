@@ -68,7 +68,7 @@ if (isSuccess){
                 </tr>
             </thead>
             <tbody>
-                {data.map((product) => (
+                {data?.map((product) => (
     
                 <ProductsRow key={product._id} product={product} refetchFn={refetch}></ProductsRow>
                

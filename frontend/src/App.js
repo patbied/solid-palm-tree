@@ -59,25 +59,25 @@ const App = () => {
           path:'/order/:id',
           element: <OrderPage/>
         },{
-          path:'/admin',
+          path:'/adminpage',
           children: [
             {
-              path: '/admin/users',
+              path: '/adminpage/users',
               element: <UserListPage/>
             },
             {
-              path: '/admin/user/:id',
+              path: '/adminpage/user/:id',
               element: <ViewUser/>
             },
             {
-              path: '/admin/products',
+              path: '/adminpage/products',
               element: <ProductListPage/>,
             },
             {
-              path:'/admin/products/create',
+              path:'/adminpage/products/create',
               element: <CreateProductPage/>
             }, {
-              path: '/admin/orders',
+              path: '/adminpage/orders',
               element: <OrderListPage/>
             }
                 
