@@ -7,14 +7,14 @@ const useAllOrders = (token) => {
             Authorization: `Bearer ${token}`
     }
   }
-    const fetchOrder= async() => {
-        const res = await axios.get('api/orders/',config)
+    const fetchOrders= async() => {
+        const res = await axios.get('/api/orders/',config)
         const fetchData = await res.data
         return fetchData
     }
     const {isLoading, isError, isSuccess, error, data, refetch} = useQuery({
       queryKey: ['ordersAll'],
-      queryFn: fetchOrder,
+      queryFn: fetchOrders,
       staleTime: 120000
     })
     return {isLoading, isError, isSuccess, error, data, refetch}

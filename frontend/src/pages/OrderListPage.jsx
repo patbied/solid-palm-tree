@@ -33,7 +33,7 @@ const OrderListPage = () => {
     }
 
 
-    if (isSuccess){ 
+ 
     return (
         <div>
     {isError 
@@ -43,6 +43,7 @@ const OrderListPage = () => {
         </Message> 
         : 
         ''}
+      
         <h1>Orders</h1>
         <Table striped bordered hover style={{maxHeight:'100px !important'}} responsive className='table-sm'>
             <thead>
@@ -55,16 +56,19 @@ const OrderListPage = () => {
                     <th>Set delivered</th>
                 </tr>
             </thead>
+            {isSuccess ? (
             <tbody>
-                {data.map((order) => (
+                
+                {data?.map((order) => (
                     
                 <OrderRow key={order._id} order={order} refetchFn={refetch}></OrderRow>
                
                 ))}
             </tbody>
+            ) : ''}
         </Table>
         </div>
     )
-    }}
+    }
 
     export default OrderListPage
