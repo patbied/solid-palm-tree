@@ -98,7 +98,9 @@ const ProductScreen = () => {
                         {inStock > 0 && (
                         <ListGroup.Item>
                             <Row>
+                                
                                 <Col>Qty:</Col>
+                                {!isError && data && isSuccess ? ( 
                                 <Col xs='auto' className='my-1'>
                                     <Form.Control as="select" value={qty} onChange={(e) => setQty(e.target.value)}>
                                         {
@@ -108,6 +110,7 @@ const ProductScreen = () => {
                                         }
                                     </Form.Control>
                                 </Col>
+                                ) : ('')}
                             </Row>
                         </ListGroup.Item>
                         )}
@@ -126,11 +129,17 @@ const ProductScreen = () => {
                 <ListGroup variant='flush'>
                                         
                 <h4>Reviews</h4>
+                
+                {!isError && data && isSuccess ? ( 
+                    <> 
                     {userInfo ? <AddReviewComponent prodId = {data?._id} refetchFn={refetch} userId={userInfo?.id}/> : ''}
                     
                     {data?.reviews.map((review) => (
                         <ReviewComponent key={review?._id} review={review}/>
                     ))}
+                     </>
+                ) : ('')}
+               
     
                 </ListGroup>
             </Col>
