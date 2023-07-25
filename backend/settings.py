@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-!q^gi$3+qg-otp)eu)8nfh(6s1!iyr6c58qlqg#=5$s63dqso(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','ecommercedjangoreact-66ae9240ebcc.herokuapp.com','www.ecommercedjangoreact.com','ecommercedjangoreact.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','127.0.0.1:8000','ecommercedjangoreact-66ae9240ebcc.herokuapp.com','www.ecommercedjangoreact.com','ecommercedjangoreact.com']
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 # Application definition
@@ -195,7 +195,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOW_ALL_ORIGINS = True
-
+CSRF_TRUSTED_ORIGINS = ['https://www.ecommercedjangoreact.com','http://127.0.0.1:8000/']
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')

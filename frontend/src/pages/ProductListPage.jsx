@@ -50,7 +50,7 @@ if (isSuccess){
             <h1>Products</h1>
             </Col>
             <Col className='text-right'>
-                <LinkContainer to='/admin/products/create'> 
+                <LinkContainer to='/adminpage/products/create'> 
                 <Button className='my-3'>Create product <i className='fas fa-plus'></i></Button>
                 </LinkContainer>
             </Col>
